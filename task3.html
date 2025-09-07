@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robocon - Task 3</title>
-    <script src="https://kit.fontawesome.com/09e383142a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="head para center">
-        <h1>SRM Team Robocon</h1>
-        <p>Web Dev Trainings 2025</p>
-    </header>
-    <section class="devs shead para center">
-        <h3>Our New Developers</h3>
-        <div>
-            <img src="stock/afeefa.png" alt="" srcset="">
-            <h4>Afeefa</h4>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-        </div>
-        <div>
-            <img src="stock/daksh.png" alt="" srcset="">
-            <h4>Daksh</h4>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-        </div>
-        <div>
-            <img src="stock/mohammed.png" alt="" srcset="">
-            <h4>Mohammed</h4>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-        </div>
-        <div>
-            <img src="stock/vaibhav.png" alt="" srcset="">
-            <h4>Vaibhav</h4>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-        </div>
-    </section>
-    <section class="shead para center">
-        <h3>Training Roadmap</h3>
-        <div>
-            <h4>Next: The Form & Preview Challenge</h4>
-            <p>The next challenge is to build a two-state UI using Vanilla HTML, CSS, and JS. Create a form to collect user details. A "Preview" button should hide the form and display the entered data. In preview mode, the button should change to "Edit", which takes you back to the form. This task introduces managing UI "modes" or "views" with JavaScript.
-            </p>
-            <a href="t3fom.html">View Live Demo</a>
-        </div>
-    </section>
-    <section>
-        <h4>Input Splitter & Color Changer - <span>Completed</span></h4>
-        <p>A foundational exercise in DOM manipulation, learning to take user input, process it with JavaScript, and dynamically create/update HTML elements.</p>
-        <div>
-            <div>
-                <h5>Submissions:</h5>
-                <a href="">Mohammed Fahad Kasim‘s GitHub Repo</a>
-            </div>
-            <div>
-                <p>Good work everyone. You took user input, split it, and turned it into a live list that’s real-time JavaScript magic.</p>
-            </div>
-        </div>
-    </section>
-    <footer class="para center">
-        <p> A training initiative by the Web Dev domain of SRM Team Robocon. Curated by shashstormer.</p>
-    </footer>
+  <section id="edit" class="card">
+    <h3 class="center">Enter Your Details</h3>
+    <div class="input">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+    </div>
+    <div class="input">
+      <label for="title">Title / Role</label>
+      <input type="text" id="title" placeholder="Enter your role">
+    </div>
+    <div class="input">
+      <label for="bio">Bio</label>
+      <textarea id="bio" placeholder="Write something about yourself"></textarea>
+    </div>
+    <button class="btn" onclick="onPreview()">Preview</button>
+  </section>
+
+  <section id="preview" class="card hidden">
+    <h3 class="center">Profile Preview</h3>
+    <div>
+      <h2 id="displayname"></h2>
+      <p id="displayrole"></p>
+      <p id="displaypreview"></p>
+      <button class="btn" onclick="onEdit()">Edit</button>
+    </div>
+  </section>
+
+  <a href="index.html" class="btn link-btn">Home Page</a>
+
+  <script>
+    function onPreview(){
+      let name = document.getElementById("name").value.trim();
+      let title = document.getElementById("title").value.trim();
+      let bio = document.getElementById("bio").value.trim();
+
+      if(!name || !title || !bio){
+        alert("Kindly enter all values");
+        return;
+      }
+
+      document.getElementById("displayname").innerText = name;
+      document.getElementById("displayrole").innerText = title;
+      document.getElementById("displaypreview").innerText = bio;
+
+      document.getElementById("preview").classList.remove("hidden");
+      document.getElementById("edit").classList.add("hidden");
+    }
+
+    function onEdit() {
+      document.getElementById("preview").classList.add("hidden");
+      document.getElementById("edit").classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>

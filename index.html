@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        #preview{
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robocon - Task 3</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/09e383142a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section id="edit">
-        <h3>Enter Your Details</h3>
-        <p>Name</p>
-        <input type="text" value="daksh" id="name">
-        <p>Title/Role</p>
-        <input type="text" value="daksh" id="title">
-        <p>Bio</p>
-        <textarea type="text" value="don" id="bio"></textarea>
-        <p><button onclick="onPreview()">Preview</button>
-    </section>
-    <section id="preview">
-        <h3>Profile Preview</h3>
-        <div>
-            <h2 id="displayname"></h2>
-            <p id="displayrole"></p>
-            <p id="displaypreview"></p>
-            <p><button onclick="onEdit()">Edit</button>
-        </div>
-    </section>
-    <a href="task3.html">Home page</a>
-    <script>
-        function onPreview(){
-            let name = document.getElementById("name").value;
-            let title = document.getElementById("title").value;
-            let bio = document.getElementById("bio").value;
+  <header class="head center">
+    <h1>SRM Team Robocon</h1>
+    <p>Web Dev Trainings 2025</p>
+  </header>
 
-            document.getElementById("displayname").innerText = name;
-            document.getElementById("displayrole").innerText =  title;
-            document.getElementById("displaypreview").innerText = bio;
+  <section class="devs center">
+    <h3>Our New Developers</h3>
+    <div class="dev-grid">
+      <div>
+        <img src="stock/afeefa.png" alt="Afeefa">
+        <h4>Afeefa</h4>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div>
+        <img src="stock/daksh.png" alt="Daksh">
+        <h4>Daksh</h4>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div>
+        <img src="stock/mohammed.png" alt="Mohammed">
+        <h4>Mohammed</h4>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <div>
+        <img src="stock/vaibhav.png" alt="Vaibhav">
+        <h4>Vaibhav</h4>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </section>
 
-            if((name=="") || (title=="") || (bio=="")){
-                window.alert("Kindly enter all values")
-            }
-            else{
-                document.getElementById("preview").style.display = "block";
-                document.getElementById("edit").style.display = "none";
-            }
-                
-    }
+  <section class="center">
+    <h3>Training Roadmap</h3>
+    <div class="card">
+      <h4>Next: The Form & Preview Challenge</h4>
+      <p>The next challenge is to build a two-state UI using Vanilla HTML, CSS, and JS. Create a form to collect user details. A "Preview" button should hide the form and display the entered data. In preview mode, the button should change to "Edit", which takes you back to the form. This task introduces managing UI "modes" or "views" with JavaScript.</p>
+      <a href="task3.html" class="btn">View Live Demo</a>
+    </div>
+  </section>
 
-        function onEdit() {
-            document.getElementById("preview").style.display = "none";
-            document.getElementById("edit").style.display = "block";
-    }
-    </script>
+  <section class="center">
+    <h4>Input Splitter & Color Changer - <span>Completed</span></h4>
+    <p>A foundational exercise in DOM manipulation, learning to take user input, process it with JavaScript, and dynamically create/update HTML elements.</p>
+    <div class="card repo">
+      <h4>Submissions:</h4>
+      <a href="#">Mohammed Fahad Kasim‘s GitHub Repo</a>
+      <a href="#">Daksh‘s GitHub Repo</a>
+      <a href="#">Vaibhav‘s GitHub Repo</a>
+      <a href="#">Rafeefa‘s GitHub Repo</a>
+      <p>Good work everyone. You took user input, split it, and turned it into a live list that’s real-time JavaScript magic.</p>
+    </div>
+  </section>
+
+  <footer class="center">
+    <p>A training initiative by the Web Dev domain of SRM Team Robocon. Curated by Daksh.</p>
+  </footer>
 </body>
 </html>
